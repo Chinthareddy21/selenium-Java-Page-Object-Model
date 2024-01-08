@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import url.url;
+import pageRepository.googleSearchPage;
 
 
 public class GoogleSearchTest {
@@ -28,11 +28,7 @@ public class GoogleSearchTest {
 	Import browser setup data commands
 	*/
 	private static final Driver drivers = new Driver();
-	/*
-	Urls set up constructor
-	Import urls from urls page in the main module
-	*/
-	private static final url URL = new url();
+	private static final googleSearchPage google = new googleSearchPage();
 	//	Web driver constructor
 	private static WebDriver driver;
 
@@ -52,7 +48,11 @@ public class GoogleSearchTest {
 	@Test
 	public void googleSearch() {
 		//	Navigating to search page
-		driver.get(URL.baseURL());
+		google.navigation(driver);
+		google.searchBoxAssertion(driver);
+		google.enterSearchText(driver);
+		google.clickingEnter(driver);
+		google.navigationAssertion(driver);
 	}
 
 	/**
