@@ -15,7 +15,7 @@
 <h4>Description:</h4>
 <ol>
 <li>The code is for learning, training and reference purpose only.</li>
-<li>The code is for Google search automation testing purpose</li>
+<li>The code is for Google search automation testing purpose.</li>
 </ol>
 
 <h4>File structure:</h4>
@@ -40,3 +40,5 @@ main folder in src folder.</p>
 <p>All the test code is placed under test folder.</p>
 <ul><li><b>Java:</b></li>
 <p>Contains all the test steps. The test steps of each page are stored separately</p></ul>
+<h5>Logs</h5>
+<p>All the logs generated during the test are saved under test.log file under logs folder.</p>
