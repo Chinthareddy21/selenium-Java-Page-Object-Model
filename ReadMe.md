@@ -12,6 +12,12 @@
 
 <h4>Date of publish: January 9th 2024</h4>
 
+<h4>Description:</h4>
+<ol>
+<li>The code is for learning, training and reference purpose only.</li>
+<li>The code is for Google search automation testing purpose</li>
+</ol>
+
 <h4>File structure:</h4>
 
 <p>All the code files are in src folder. All the setup code for the tests are in under in java folder under 
