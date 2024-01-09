@@ -1,16 +1,18 @@
-<h3> Author: Bhargava Reddy Chinthareddy</h3>
+<h3>Author: Bhargava Reddy Chinthareddy</h3>
 
-<h4> Library: Selenium</h4>
+<h4>Library: Selenium, TestNG</h4>
 
-<h4> Language: Java - <b>JDK 21</b></h4>
+<h4>Language: Java - <b>JDK 21</b></h4>
 
-<h4> IDE: IntelliJ Idea</h4>
+<h4>Reporter: Extent reports</h4>
 
-<h4> Framework: Page Object Model(Hybrid model)</h4>
+<h4>IDE: IntelliJ Idea</h4>
 
-<h4> Date of publish: January 9th 2024</h4>
+<h4>Framework: Page Object Model(Hybrid model)</h4>
 
-<h4> File structure:</h4>
+<h4>Date of publish: January 9th 2024</h4>
+
+<h4>File structure:</h4>
 
 <p>All the code files are in src folder. All the setup code for the tests are in under in java folder under 
 main folder in src folder.</p>
