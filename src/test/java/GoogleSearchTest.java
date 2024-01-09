@@ -51,17 +51,21 @@ public class GoogleSearchTest {
 	public void googleSearchNavigation() {
 		//	Navigating to search page
 		google.navigation(driver);
+		//	Asserting google search box is visible
 		google.searchBoxAssertion(driver);
 	}
 
 	@Test(priority = 3)
 	public void googleSearchResults() {
+		//	Asserting navigated to results page
 		google.navigationAssertion(driver, text.searchText());
 	}
 
 	@Test(priority = 2)
 	public void googleSearchSearching() {
+		//	Entering search text
 		google.enterSearchText(driver, text.searchText());
+		//	Clicking enter
 		google.clickingEnter(driver);
 	}
 
