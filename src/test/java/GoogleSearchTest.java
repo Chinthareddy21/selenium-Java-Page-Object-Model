@@ -2,9 +2,10 @@
  * This is document for testing google search functionality Automation
  * Date of creation: January 8th 2024,
  * Author: Bhargava reddy Chinthareddy,
- * Purpose: Learning, Training and for Reference
+ * Purpose: for Learning, Training and Reference
  */
 
+import credentials.keywords;
 import drivers.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,6 +30,7 @@ public class GoogleSearchTest {
 	*/
 	private static final Driver drivers = new Driver();
 	private static final googleSearchPage google = new googleSearchPage();
+	private static final keywords text = new keywords();
 	//	Web driver constructor
 	private static WebDriver driver;
 
@@ -45,14 +47,22 @@ public class GoogleSearchTest {
 	/**
 	 * Test class
 	 */
-	@Test
-	public void googleSearch() {
+	@Test(priority = 1)
+	public void googleSearchNavigation() {
 		//	Navigating to search page
 		google.navigation(driver);
 		google.searchBoxAssertion(driver);
-		google.enterSearchText(driver);
+	}
+
+	@Test(priority = 3)
+	public void googleSearchResults() {
+		google.navigationAssertion(driver, text.searchText());
+	}
+
+	@Test(priority = 2)
+	public void googleSearchSearching() {
+		google.enterSearchText(driver, text.searchText());
 		google.clickingEnter(driver);
-		google.navigationAssertion(driver);
 	}
 
 	/**
