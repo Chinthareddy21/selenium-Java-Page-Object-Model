@@ -1,6 +1,8 @@
 package pageRepository;
 
 import objectRepository.googleSearchObjects;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import url.url;
@@ -14,6 +16,9 @@ public class googleSearchPage {
 	*/
 	private static final url URL = new url();
 
+	//	logger set up constructor
+	private static final Logger log = LogManager.getLogger();
+
 	/**
 	 * Code for test actions
 	 * Returns actions code to the test page
@@ -24,7 +29,9 @@ public class googleSearchPage {
 	The code will be returned to test page
 	 */
 	public void navigation(WebDriver driver) {
+		log.info("Entering url");
 		driver.get(URL.baseURL());
+		log.info("Entered url");
 	}
 
 	/*
@@ -33,6 +40,7 @@ public class googleSearchPage {
 	The code will be returned to test page
 	 */
 	public void searchBoxAssertion(WebDriver driver) {
+		log.info("Asserting Search box is visible or not");
 		assert googleSearchObjects.searchBox(driver).isDisplayed();
 	}
 
@@ -42,6 +50,7 @@ public class googleSearchPage {
 	The code will be returned to test page
 	 */
 	public void enterSearchText(WebDriver driver, String string) {
+		log.info("Entering search text");
 		googleSearchObjects.searchBox(driver).sendKeys(string);
 	}
 
@@ -50,6 +59,7 @@ public class googleSearchPage {
 	The code will be returned to test page
 	 */
 	public void clickingEnter(WebDriver driver) {
+		log.info("Pressing enter key to search");
 		googleSearchObjects.searchBox(driver).sendKeys(Keys.RETURN);
 	}
 
@@ -63,6 +73,7 @@ public class googleSearchPage {
 		String searchText = googleSearchObjects.searchBox(driver).getText();
 
 		//  This code is for asserting the text in the search box of results page
+		log.info("Asserting search results page");
 		assert Objects.equals(searchText, string);
 	}
 }
