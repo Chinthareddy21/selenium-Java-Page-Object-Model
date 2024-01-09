@@ -1,19 +1,15 @@
-[INFO ] 2024-01-09 11:14:02.317 [main] Driver - Setting up the Chrome browser
-[INFO ] 2024-01-09 11:14:05.662 [main] GoogleSearchTest - Browser started
-[INFO ] 2024-01-09 11:14:06.360 [main] GoogleSearchTest - Quiting the browser
-[INFO ] 2024-01-09 11:45:01.624 [main] Driver - Setting up the Chrome browser
-[INFO ] 2024-01-09 11:45:04.267 [main] GoogleSearchTest - Browser started
-[INFO ] 2024-01-09 11:45:05.031 [main] GoogleSearchTest - Quiting the browser
-[INFO ] 2024-01-09 18:15:33.607 [main] Driver - Setting up the Chrome browser
-[INFO ] 2024-01-09 18:15:36.863 [main] GoogleSearchTest - Browser started
-[INFO ] 2024-01-09 18:15:41.262 [main] GoogleSearchTest - Quiting the browser
-[INFO ] 2024-01-09 18:18:04.712 [main] Driver - Setting up the Chrome browser
-[INFO ] 2024-01-09 18:18:06.594 [main] GoogleSearchTest - Browser started
-[INFO ] 2024-01-09 18:18:07.201 [main] GoogleSearchTest - Quiting the browser
-[INFO ] 2024-01-09 18:28:42.916 [main] Driver - Setting up the Chrome browser
-[INFO ] 2024-01-09 18:29:15.141 [main] Driver - Setting up the Chrome browser
-[INFO ] 2024-01-09 18:29:16.635 [main] GoogleSearchTest - Browser started
-[INFO ] 2024-01-09 18:29:20.383 [main] GoogleSearchTest - Quiting the browser
-[INFO ] 2024-01-09 18:35:12.180 [main] Driver - Setting up the Chrome browser
-[INFO ] 2024-01-09 18:35:13.979 [main] GoogleSearchTest - Browser started
-[INFO ] 2024-01-09 18:35:18.953 [main] GoogleSearchTest - Quiting the browser
+[INFO ] 2024-01-10 01:03:38.641 [main] Driver - Setting up the Chrome browser
+[INFO ] 2024-01-10 01:04:48.172 [main] Driver - Setting up the Chrome browser
+[INFO ] 2024-01-10 01:05:06.290 [main] GoogleSearchTest - Browser started
+[INFO ] 2024-01-10 01:05:06.327 [main] googleSearchPage - Entering url
+[INFO ] 2024-01-10 01:05:09.272 [main] googleSearchPage - Entered url
+[INFO ] 2024-01-10 01:05:09.273 [main] GoogleSearchTest - Navigation successful
+[INFO ] 2024-01-10 01:05:09.273 [main] googleSearchPage - Asserting Search box is visible or not
+[INFO ] 2024-01-10 01:05:09.319 [main] GoogleSearchTest - Search box is visible
+[INFO ] 2024-01-10 01:05:09.325 [main] googleSearchPage - Entering search text
+[INFO ] 2024-01-10 01:05:09.410 [main] GoogleSearchTest - Entered search text
+[INFO ] 2024-01-10 01:05:09.411 [main] googleSearchPage - Pressing enter key to search
+[INFO ] 2024-01-10 01:05:12.021 [main] GoogleSearchTest - Clicked enter
+[INFO ] 2024-01-10 01:05:12.053 [main] googleSearchPage - Asserting search results page
+[INFO ] 2024-01-10 01:05:12.054 [main] GoogleSearchTest - Successfully navigated to results page
+[INFO ] 2024-01-10 01:05:12.218 [main] GoogleSearchTest - Quiting the browser
