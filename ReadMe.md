@@ -32,4 +32,5 @@ main folder in src folder.</p>
 </ul>
 <p>All the code for to print log's in the console is placed under resources' folder.</p>
 <p>All the test code is placed under test folder.</p>
-<p><b>Tests:</b>Contains all the test steps. The test steps of each page are stored separately</p>
+<p><b>Tests:</b> 
+Contains all the test steps. The test steps of each page are stored separately</p>
