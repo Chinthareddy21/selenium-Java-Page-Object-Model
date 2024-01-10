@@ -6,19 +6,18 @@
     <Appenders>
         <RollingFile name="fileLogger"
                      fileName="${basePath}/test.log"
-                     filePattern="${basePath}/test.log">
+                     filePattern="${basePath}/app-%d{yyyy-MM-dd}.log">
             <PatternLayout>
                 <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
                 </pattern>
             </PatternLayout>
             <Policies>
-                <OnStartupTriggeringPolicy />
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />
                 <SizeBasedTriggeringPolicy size="10MB" />
             </Policies>
             <!-- Max 10 files will be created everyday -->
             <DefaultRolloverStrategy max="10">
-                <Delete basePath="${basePath}" maxDepth="10">
+                <Delete basePath="${basePathr}" maxDepth="10">
                     <!-- Delete all files older than 30 days -->
                     <IfLastModified age="30d" />
                 </Delete>

@@ -7,6 +7,7 @@
 
 import credentials.keywords;
 import drivers.Driver;
+import extentReports.extentReporter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +34,7 @@ public class GoogleSearchTest {
 	private static final keywords text = new keywords();
 	//	Web driver constructor
 	private static WebDriver driver;
+	private static final extentReporter extent = new extentReporter();
 
 	/**
 	 * Runs before the test method to start the browser
@@ -42,6 +44,7 @@ public class GoogleSearchTest {
 		//	Chrome browser setup
 		driver = drivers.chrome();
 		log.info("Browser started");
+		extent.extentSetUp();
 	}
 
 	/**
@@ -55,6 +58,7 @@ public class GoogleSearchTest {
 		//	Asserting google search box is visible
 		google.searchBoxAssertion(driver);
 		log.info("Search box is visible");
+		extent.extentTest("Navigation test");
 	}
 
 	@Test(priority = 3)
@@ -62,6 +66,7 @@ public class GoogleSearchTest {
 		//	Asserting navigated to results page
 		google.navigationAssertion(driver, text.searchText());
 		log.info("Successfully navigated to results page");
+		extent.extentTest("Search results test");
 	}
 
 	@Test(priority = 2)
@@ -72,6 +77,7 @@ public class GoogleSearchTest {
 		//	Clicking enter
 		google.clickingEnter(driver);
 		log.info("Clicked enter");
+		extent.extentTest("Searching test");
 	}
 
 	/**
@@ -79,6 +85,7 @@ public class GoogleSearchTest {
 	 */
 	@AfterTest
 	public void tearDown() {
+		extent.extentTearDown();
 		//	Quiting the browser
 		driver.quit();
 		log.info("Quiting the browser");
