@@ -5,6 +5,7 @@
  * Purpose: for Learning, Training and Reference
  */
 
+import com.aventstack.extentreports.ExtentTest;
 import credentials.keywords;
 import drivers.Driver;
 import extentReports.extentReporter;
@@ -19,10 +20,6 @@ import pageRepository.googleSearchPage;
 
 public class GoogleSearchTest {
 
-	/**
-	 * Constructors
-	 */
-
 	//	logger set up constructor
 	private static final Logger log = LogManager.getLogger();
 	/*
@@ -32,9 +29,13 @@ public class GoogleSearchTest {
 	private static final Driver drivers = new Driver();
 	private static final googleSearchPage google = new googleSearchPage();
 	private static final keywords text = new keywords();
+	private static final extentReporter extent = new extentReporter();
 	//	Web driver constructor
 	private static WebDriver driver;
-	private static final extentReporter extent = new extentReporter();
+	/**
+	 * Constructors
+	 */
+	ExtentTest test;
 
 	/**
 	 * Runs before the test method to start the browser
@@ -52,32 +53,48 @@ public class GoogleSearchTest {
 	 */
 	@Test(priority = 1)
 	public void googleSearchNavigation() {
-		//	Navigating to search page
-		google.navigation(driver);
-		log.info("Navigation successful");
-		//	Asserting google search box is visible
-		google.searchBoxAssertion(driver);
-		log.info("Search box is visible");
-		extent.extentTest("Navigation test");
+		try {
+			//	Navigating to search page
+			google.navigation(driver);
+			log.info("Navigation successful");
+			//	Asserting google search box is visible
+			google.searchBoxAssertion(driver);
+			log.info("Search box is visible");
+			test = extent.extentTest("Navigation test");
+			test.pass("Successfully navigated");
+		} catch (Exception e) {
+			test.fail("Navigation failed");
+		}
 	}
 
 	@Test(priority = 3)
 	public void googleSearchResults() {
 		//	Asserting navigated to results page
-		google.navigationAssertion(driver, text.searchText());
-		log.info("Successfully navigated to results page");
-		extent.extentTest("Search results test");
+		try {
+			google.navigationAssertion(driver, text.searchText());
+			log.info("Successfully navigated to results page");
+			test = extent.extentTest("Search results test");
+			test.pass("Assertion passed");
+		} catch (Exception e) {
+			test.fail("Assertion failed");
+		}
 	}
 
 	@Test(priority = 2)
 	public void googleSearchSearching() {
-		//	Entering search text
-		google.enterSearchText(driver, text.searchText());
-		log.info("Entered search text");
-		//	Clicking enter
-		google.clickingEnter(driver);
-		log.info("Clicked enter");
-		extent.extentTest("Searching test");
+		try {
+			//	Entering search text
+			google.enterSearchText(driver, text.searchText());
+			log.info("Entered search text");
+			//	Clicking enter
+			google.clickingEnter(driver);
+			log.info("Clicked enter");
+			test = extent.extentTest("Searching test");
+			test.pass("Successfully started searching");
+		} catch (Exception e) {
+			test.fail("Failed to search");
+		}
+
 	}
 
 	/**

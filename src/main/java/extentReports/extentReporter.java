@@ -15,8 +15,9 @@ public class extentReporter {
 		spark.config().setTheme(Theme.DARK);
 	}
 
-	public void extentTest(String testName){
+	public ExtentTest extentTest(String testName){
 		test = extent.createTest(testName);
+		return test;
 	}
 
 	public void extentTearDown(){
