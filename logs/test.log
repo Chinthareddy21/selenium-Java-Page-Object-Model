@@ -211,3 +211,59 @@
 [INFO ] 2024-02-24 12:27:46.275 [main] googleSearchPage - Asserting search results page
 [INFO ] 2024-02-24 12:27:46.275 [main] GoogleSearchTest - Successfully navigated to results page
 [INFO ] 2024-02-24 12:27:46.673 [main] GoogleSearchTest - Quiting the browser
+[INFO ] 2024-02-24 17:10:15.727 [main] Driver - Setting up the Chrome browser
+[INFO ] 2024-02-24 17:10:18.100 [main] GoogleSearchTest - Browser started
+[INFO ] 2024-02-24 17:10:18.316 [main] googleSearchPage - Entering url
+[INFO ] 2024-02-24 17:10:20.184 [main] googleSearchPage - Entered url
+[INFO ] 2024-02-24 17:10:20.190 [main] GoogleSearchTest - Navigation successful
+[INFO ] 2024-02-24 17:10:20.190 [main] googleSearchPage - Asserting Search box is visible or not
+[INFO ] 2024-02-24 17:10:20.224 [main] GoogleSearchTest - Search box is visible
+[INFO ] 2024-02-24 17:10:20.229 [main] googleSearchPage - Entering search text
+[INFO ] 2024-02-24 17:10:20.300 [main] GoogleSearchTest - Entered search text
+[INFO ] 2024-02-24 17:10:20.300 [main] googleSearchPage - Pressing enter key to search
+[INFO ] 2024-02-24 17:10:23.542 [main] GoogleSearchTest - Clicked enter
+[INFO ] 2024-02-24 17:10:23.573 [main] googleSearchPage - Asserting search results page
+[INFO ] 2024-02-24 17:10:23.573 [main] GoogleSearchTest - Successfully navigated to results page
+[INFO ] 2024-02-24 17:10:24.395 [main] GoogleSearchTest - Quiting the browser
+[INFO ] 2024-02-24 17:15:58.533 [main] Driver - Setting up the Chrome browser
+[INFO ] 2024-02-24 17:15:59.884 [main] GoogleSearchTest - Browser started
+[INFO ] 2024-02-24 17:16:00.049 [main] googleSearchPage - Entering url
+[INFO ] 2024-02-24 17:16:01.652 [main] googleSearchPage - Entered url
+[INFO ] 2024-02-24 17:16:01.652 [main] GoogleSearchTest - Navigation successful
+[INFO ] 2024-02-24 17:16:01.652 [main] googleSearchPage - Asserting Search box is visible or not
+[INFO ] 2024-02-24 17:16:01.685 [main] GoogleSearchTest - Search box is visible
+[INFO ] 2024-02-24 17:16:01.689 [main] googleSearchPage - Entering search text
+[INFO ] 2024-02-24 17:16:01.759 [main] GoogleSearchTest - Entered search text
+[INFO ] 2024-02-24 17:16:01.759 [main] googleSearchPage - Pressing enter key to search
+[INFO ] 2024-02-24 17:16:02.016 [main] GoogleSearchTest - Clicked enter
+[INFO ] 2024-02-24 17:16:02.922 [main] googleSearchPage - Asserting search results page
+[INFO ] 2024-02-24 17:16:02.922 [main] GoogleSearchTest - Successfully navigated to results page
+[INFO ] 2024-02-24 17:16:03.331 [main] GoogleSearchTest - Quiting the browser
+[INFO ] 2024-02-24 17:18:09.392 [main] Driver - Setting up the Chrome browser
+[INFO ] 2024-02-24 17:18:10.738 [main] GoogleSearchTest - Browser started
+[INFO ] 2024-02-24 17:18:10.897 [main] googleSearchPage - Entering url
+[INFO ] 2024-02-24 17:18:12.435 [main] googleSearchPage - Entered url
+[INFO ] 2024-02-24 17:18:12.436 [main] GoogleSearchTest - Navigation successful
+[INFO ] 2024-02-24 17:18:12.436 [main] googleSearchPage - Asserting Search box is visible or not
+[INFO ] 2024-02-24 17:18:12.468 [main] GoogleSearchTest - Search box is visible
+[INFO ] 2024-02-24 17:18:12.472 [main] googleSearchPage - Entering search text
+[INFO ] 2024-02-24 17:18:12.542 [main] GoogleSearchTest - Entered search text
+[INFO ] 2024-02-24 17:18:12.542 [main] googleSearchPage - Pressing enter key to search
+[INFO ] 2024-02-24 17:18:12.797 [main] GoogleSearchTest - Clicked enter
+[INFO ] 2024-02-24 17:18:13.965 [main] googleSearchPage - Asserting search results page
+[INFO ] 2024-02-24 17:18:13.965 [main] GoogleSearchTest - Successfully navigated to results page
+[INFO ] 2024-02-24 17:18:14.098 [main] GoogleSearchTest - Quiting the browser
+[INFO ] 2024-02-24 17:19:34.350 [main] Driver - Setting up the Chrome browser
+[INFO ] 2024-02-24 17:19:35.749 [main] GoogleSearchTest - Browser started
+[INFO ] 2024-02-24 17:19:35.908 [main] googleSearchPage - Entering url
+[INFO ] 2024-02-24 17:19:37.561 [main] googleSearchPage - Entered url
+[INFO ] 2024-02-24 17:19:37.561 [main] GoogleSearchTest - Navigation successful
+[INFO ] 2024-02-24 17:19:37.561 [main] googleSearchPage - Asserting Search box is visible or not
+[INFO ] 2024-02-24 17:19:37.592 [main] GoogleSearchTest - Search box is visible
+[INFO ] 2024-02-24 17:19:37.595 [main] googleSearchPage - Entering search text
+[INFO ] 2024-02-24 17:19:37.666 [main] GoogleSearchTest - Entered search text
+[INFO ] 2024-02-24 17:19:37.666 [main] googleSearchPage - Pressing enter key to search
+[INFO ] 2024-02-24 17:19:37.905 [main] GoogleSearchTest - Clicked enter
+[INFO ] 2024-02-24 17:19:38.591 [main] googleSearchPage - Asserting search results page
+[INFO ] 2024-02-24 17:19:38.591 [main] GoogleSearchTest - Successfully navigated to results page
+[INFO ] 2024-02-24 17:19:38.713 [main] GoogleSearchTest - Quiting the browser

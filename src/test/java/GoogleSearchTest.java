@@ -19,7 +19,9 @@ import pageRepository.googleSearchPage;
 
 
 public class GoogleSearchTest {
-
+	/**
+	 * Constructors
+	 */
 	//	logger set up constructor
 	private static final Logger log = LogManager.getLogger();
 	/*
@@ -32,9 +34,7 @@ public class GoogleSearchTest {
 	private static final extentReporter extent = new extentReporter();
 	//	Web driver constructor
 	private static WebDriver driver;
-	/**
-	 * Constructors
-	 */
+	//	Extent test dialog constructor
 	ExtentTest test;
 
 	/**
@@ -42,10 +42,17 @@ public class GoogleSearchTest {
 	 */
 	@BeforeTest
 	public void setUp() {
-		//	Chrome browser setup
-		driver = drivers.chrome();
-		log.info("Browser started");
-		extent.extentSetUp();
+		try {
+			//	Chrome browser setup
+			driver = drivers.chrome();
+			log.info("Browser started");
+			extent.extentSetUp();
+			test = extent.extentTest("Browser SetUp");
+			test.pass("Successfully started the browser");
+		} catch (Exception e) {
+			test.fail(e);
+			test.fail("Fail to start the browser");
+		}
 	}
 
 	/**
@@ -64,6 +71,7 @@ public class GoogleSearchTest {
 			test.pass("Successfully navigated");
 		} catch (Exception e) {
 			test.fail(e);
+			test.fail("Failed to Navigate");
 		}
 	}
 
@@ -77,6 +85,7 @@ public class GoogleSearchTest {
 			test.pass("Assertion passed");
 		} catch (Exception e) {
 			test.fail(e);
+			test.fail("Search failed");
 		}
 	}
 
@@ -93,8 +102,8 @@ public class GoogleSearchTest {
 			test.pass("Successfully started searching");
 		} catch (Exception e) {
 			test.fail(e);
+			test.fail("Failed to navigate to search page");
 		}
-
 	}
 
 	/**
@@ -102,9 +111,16 @@ public class GoogleSearchTest {
 	 */
 	@AfterTest
 	public void tearDown() {
+		try {
+			//	Quiting the browser
+			driver.quit();
+			log.info("Quiting the browser");
+			test = extent.extentTest("Closing the browser");
+			test.pass("Successfully closed the browser");
+		} catch (Exception e) {
+			test.fail(e);
+			test.fail("Failed to close the browser");
+		}
 		extent.extentTearDown();
-		//	Quiting the browser
-		driver.quit();
-		log.info("Quiting the browser");
 	}
 }
