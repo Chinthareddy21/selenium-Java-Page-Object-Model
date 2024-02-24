@@ -63,7 +63,7 @@ public class GoogleSearchTest {
 			test = extent.extentTest("Navigation test");
 			test.pass("Successfully navigated");
 		} catch (Exception e) {
-			test.fail("Navigation failed");
+			test.fail(e);
 		}
 	}
 
@@ -76,7 +76,7 @@ public class GoogleSearchTest {
 			test = extent.extentTest("Search results test");
 			test.pass("Assertion passed");
 		} catch (Exception e) {
-			test.fail("Assertion failed");
+			test.fail(e);
 		}
 	}
 
@@ -92,7 +92,7 @@ public class GoogleSearchTest {
 			test = extent.extentTest("Searching test");
 			test.pass("Successfully started searching");
 		} catch (Exception e) {
-			test.fail("Failed to search");
+			test.fail(e);
 		}
 
 	}
