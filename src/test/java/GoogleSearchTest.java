@@ -51,7 +51,9 @@ public class GoogleSearchTest {
 			test.pass("Successfully started the browser");
 		} catch (Exception e) {
 			test.fail(e);
-			test.fail("Fail to start the browser");
+			test.fail("Failed to start the browser");
+			log.error(e);
+			log.error("Failed to start the browser");
 		}
 	}
 
@@ -72,6 +74,8 @@ public class GoogleSearchTest {
 		} catch (Exception e) {
 			test.fail(e);
 			test.fail("Failed to Navigate");
+			log.error(e);
+			log.error("Failed to Navigate");
 		}
 	}
 
@@ -86,6 +90,8 @@ public class GoogleSearchTest {
 		} catch (Exception e) {
 			test.fail(e);
 			test.fail("Search failed");
+			log.error(e);
+			log.error("Search failed");
 		}
 	}
 
@@ -103,6 +109,8 @@ public class GoogleSearchTest {
 		} catch (Exception e) {
 			test.fail(e);
 			test.fail("Failed to navigate to search page");
+			log.error(e);
+			log.error("Failed to navigate to search page");
 		}
 	}
 
@@ -120,6 +128,8 @@ public class GoogleSearchTest {
 		} catch (Exception e) {
 			test.fail(e);
 			test.fail("Failed to close the browser");
+			log.error(e);
+			log.error("Failed to close the browser");
 		}
 		extent.extentTearDown();
 	}

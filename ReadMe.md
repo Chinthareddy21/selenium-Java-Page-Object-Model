@@ -33,6 +33,10 @@ main folder in src folder.</p>
 <p>Contains all the code used in the test. The code for each page should be created separately</p>
 <p>Code in a single file can be used in different test files.</p>
 </li>
+<li>Extent reports:
+<p>Contains all the Extent setup code used in the Project.</p>
+<p>Step name and log line are given in the test file with the use of constructors</p>
+</li>
 <li>url:
 <p>Contains hard coded values of all url's used in the test.</p></li>
 </ul>
@@ -42,3 +46,8 @@ main folder in src folder.</p>
 <p>Contains all the test steps. The test steps of each page are stored separately</p></ul>
 <h5>Logs</h5>
 <p>All the logs generated during the test are saved under test.log file under logs folder.</p>
+
+<h4>Reporter</h4>
+<p>Extent reporter is the reporter used in this project</p>
+<p>The report will be generated like this</p>
+<img src="img.png">
