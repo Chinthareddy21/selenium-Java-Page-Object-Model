@@ -11,6 +11,7 @@ import drivers.Driver;
 import extentReports.extentReporter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -35,26 +36,18 @@ public class GoogleSearchTest {
 	//	Web driver constructor
 	private static WebDriver driver;
 	//	Extent test dialog constructor
-	ExtentTest test;
+	private static ExtentTest test;
 
 	/**
 	 * Runs before the test method to start the browser
 	 */
 	@BeforeTest
 	public void setUp() {
-		try {
-			//	Chrome browser setup
-			driver = drivers.chrome();
-			log.info("Browser started");
-			extent.extentSetUp();
-			test = extent.extentTest("Browser SetUp");
-			test.pass("Successfully started the browser");
-		} catch (Exception e) {
-			test.fail(e);
-			test.fail("Failed to start the browser");
-			log.error(e);
-			log.error("Failed to start the browser");
-		}
+		//	Chrome browser setup
+		driver = drivers.Browsers("edge");
+		extent.extentSetUp();
+		test = extent.extentTest("Browser SetUp");
+		test.pass("Successfully started the browser");
 	}
 
 	/**
@@ -62,56 +55,28 @@ public class GoogleSearchTest {
 	 */
 	@Test(priority = 1)
 	public void googleSearchNavigation() {
-		try {
-			//	Navigating to search page
-			google.navigation(driver);
-			log.info("Navigation successful");
-			//	Asserting google search box is visible
-			google.searchBoxAssertion(driver);
-			log.info("Search box is visible");
-			test = extent.extentTest("Navigation test");
-			test.pass("Successfully navigated");
-		} catch (Exception e) {
-			test.fail(e);
-			test.fail("Failed to Navigate");
-			log.error(e);
-			log.error("Failed to Navigate");
-		}
+		//	Navigating to search page
+		google.navigation(driver);
+		//	Asserting google search box is visible
+		google.searchBoxAssertion(driver);
 	}
 
 	@Test(priority = 3)
 	public void googleSearchResults() {
 		//	Asserting navigated to results page
-		try {
-			google.navigationAssertion(driver, text.searchText());
-			log.info("Successfully navigated to results page");
-			test = extent.extentTest("Search results test");
-			test.pass("Assertion passed");
-		} catch (Exception e) {
-			test.fail(e);
-			test.fail("Search failed");
-			log.error(e);
-			log.error("Search failed");
-		}
+		google.navigationAssertion(driver, text.searchText());
+		test = extent.extentTest("Search results test");
+		test.pass("Assertion passed");
 	}
 
 	@Test(priority = 2)
 	public void googleSearchSearching() {
-		try {
-			//	Entering search text
-			google.enterSearchText(driver, text.searchText());
-			log.info("Entered search text");
-			//	Clicking enter
-			google.clickingEnter(driver);
-			log.info("Clicked enter");
-			test = extent.extentTest("Searching test");
-			test.pass("Successfully started searching");
-		} catch (Exception e) {
-			test.fail(e);
-			test.fail("Failed to navigate to search page");
-			log.error(e);
-			log.error("Failed to navigate to search page");
-		}
+		//	Entering search text
+		google.enterSearchText(driver, text.searchText());
+		//	Clicking enter
+		google.clickingEnter(driver, Keys.RETURN);
+		test = extent.extentTest("Searching test");
+		test.pass("Successfully started searching");
 	}
 
 	/**

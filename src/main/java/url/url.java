@@ -7,6 +7,6 @@ public class url {
 	 */
 	public String baseURL() {
 		//	Google search page url as string
-		return "https://google.com";
+		return "https://www.google.com/";
 	}
 }
