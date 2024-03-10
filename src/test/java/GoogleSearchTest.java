@@ -44,7 +44,8 @@ public class GoogleSearchTest {
 	@BeforeTest
 	public void setUp() {
 		//	Chrome browser setup
-		driver = drivers.Browsers("edge");
+		driver = drivers.Browsers("chrome");
+		driver.manage().window().maximize();
 		extent.extentSetUp();
 		test = extent.extentTest("Browser SetUp");
 		test.pass("Successfully started the browser");
@@ -65,8 +66,6 @@ public class GoogleSearchTest {
 	public void googleSearchResults() {
 		//	Asserting navigated to results page
 		google.navigationAssertion(driver, text.searchText());
-		test = extent.extentTest("Search results test");
-		test.pass("Assertion passed");
 	}
 
 	@Test(priority = 2)
@@ -75,8 +74,6 @@ public class GoogleSearchTest {
 		google.enterSearchText(driver, text.searchText());
 		//	Clicking enter
 		google.clickingEnter(driver, Keys.RETURN);
-		test = extent.extentTest("Searching test");
-		test.pass("Successfully started searching");
 	}
 
 	/**
@@ -84,16 +81,14 @@ public class GoogleSearchTest {
 	 */
 	@AfterTest
 	public void tearDown() {
-		try {
+		if (driver != null) {
 			//	Quiting the browser
 			driver.quit();
 			log.info("Quiting the browser");
 			test = extent.extentTest("Closing the browser");
 			test.pass("Successfully closed the browser");
-		} catch (Exception e) {
-			test.fail(e);
+		} else {
 			test.fail("Failed to close the browser");
-			log.error(e);
 			log.error("Failed to close the browser");
 		}
 		extent.extentTearDown();

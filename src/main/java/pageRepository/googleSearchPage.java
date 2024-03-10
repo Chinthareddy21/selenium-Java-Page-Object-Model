@@ -44,6 +44,7 @@ public class googleSearchPage {
 		} else {
 			test = extent.extentTest("Navigation");
 			test.fail("failed to navigate to the basePage");
+			log.error("Failed to navigate to base page");
 		}
 	}
 
@@ -60,7 +61,7 @@ public class googleSearchPage {
 			log.info("Search box is visible");
 		} else {
 			test = extent.extentTest("Search Box assertion");
-			test.pass("Search Box isn't visible");
+			test.fail("Search Box isn't visible");
 			log.error("Search box isn't visible");
 		}
 	}
@@ -75,7 +76,11 @@ public class googleSearchPage {
 			log.info("Entering search text");
 			googleSearchObjects.searchBox(driver).sendKeys(string);
 			log.info("Entered text");
+			test = extent.extentTest("Entering search keys");
+			test.pass("Successfully entered search keys");
 		} else {
+			test = extent.extentTest("Entering search keys");
+			test.fail("Failed to enter search keys");
 			log.error("Failed to enter the text");
 		}
 
@@ -101,6 +106,13 @@ public class googleSearchPage {
 
 		//  This code is for asserting the text in the search box of results page
 		log.info("Asserting search results page");
-		assert Objects.equals(searchText, string);
+		if (Objects.equals(searchText, string)) {
+			test = extent.extentTest("Search results page");
+			test.pass("Successfully navigated to search results page");
+		} else {
+			test = extent.extentTest("Search results page");
+			test.fail("Failed to navigate to search results page");
+			log.error("Failed to navigate to search results page");
+		}
 	}
 }

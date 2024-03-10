@@ -20,7 +20,7 @@ public class Driver {
 				ChromeOptions opt = new ChromeOptions();
 
 				//	Code to Maximize windows and allow remote origins
-				opt.addArguments("--start-maximized", "--remote-allow-origins=*");
+				opt.addArguments("--remote-allow-origins=*");
 
 				//	Returns code to test page along with the Chrome options
 				driver = new ChromeDriver(opt);
