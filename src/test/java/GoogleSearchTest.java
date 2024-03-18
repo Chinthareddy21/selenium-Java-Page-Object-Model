@@ -6,12 +6,10 @@
  */
 
 import com.aventstack.extentreports.ExtentTest;
-import credentials.keywords;
 import drivers.Driver;
 import extentReports.extentReporter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -30,11 +28,10 @@ public class GoogleSearchTest {
 	Import browser setup data commands
 	*/
 	private static final Driver drivers = new Driver();
-	private static final googleSearchPage google = new googleSearchPage();
-	private static final keywords text = new keywords();
 	private static final extentReporter extent = new extentReporter();
 	//	Web driver constructor
 	private static WebDriver driver;
+	private static final googleSearchPage google = new googleSearchPage(driver);
 	//	Extent test dialog constructor
 	private static ExtentTest test;
 
@@ -63,17 +60,17 @@ public class GoogleSearchTest {
 	}
 
 	@Test(priority = 3)
-	public void googleSearchResults() {
+	public void googleSearchResults() throws InterruptedException {
 		//	Asserting navigated to results page
-		google.navigationAssertion(driver, text.searchText());
+		google.navigationAssertion(driver, "Automation test - Google Search");
 	}
 
 	@Test(priority = 2)
-	public void googleSearchSearching() {
+	public void googleSearchSearching() throws InterruptedException {
 		//	Entering search text
-		google.enterSearchText(driver, text.searchText());
+		google.enterSearchText(driver);
 		//	Clicking enter
-		google.clickingEnter(driver, Keys.RETURN);
+		google.clickingEnter(driver);
 	}
 
 	/**
